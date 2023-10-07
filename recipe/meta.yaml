@@ -1,7 +1,7 @@
 {% set name = "picmistandard" %}
-{% set version = "0.27.0" %}
+{% set version = "0.28.0" %}
 {% set build = 0 %}
-{% set sha256 = "6d1d44c5616dc43bfa73368d7f52d89cbfff10910ff69f9631c17a957a25a31c" %}
+{% set sha256 = "0fe5bda3cfc24b3e8983e52dd787faeb771f14fddee6ad908175221bba5b4b5d" %}
 
 package:
   name: {{ name|lower }}
