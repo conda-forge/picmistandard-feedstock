@@ -15,7 +15,6 @@ build:
   number: {{ build }}
   noarch: python
   script:
-    - cd PICMI_Python
     - {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
