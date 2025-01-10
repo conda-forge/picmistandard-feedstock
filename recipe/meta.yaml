@@ -1,6 +1,6 @@
 {% set name = "picmistandard" %}
 {% set version = "0.32.0" %}
-{% set build = 0 %}
+{% set build = 1 %}
 {% set sha256 = "9be7746ceeddf195f9ce5ef07c9bce2fc194a01cf4ba05e3bdda506d2cc5fb96" %}
 
 package:
@@ -20,14 +20,16 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
     - setuptools
   run:
     - numpy
-    - python >=3.6
+    - python >={{ python_min }}
     - scipy >=1.5
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - picmistandard
 
