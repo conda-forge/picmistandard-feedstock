@@ -23,15 +23,20 @@ requirements:
     - python {{ python_min }}
     - setuptools
   run:
-    - numpy
     - python >={{ python_min }}
-    - scipy >=1.5
+    - numpy >=1.15
+    - pydantic >=2.13
+    - scipy >=1.5,<2
+    - typing_extensions
 
 test:
   requires:
+    - pip
     - python {{ python_min }}
   imports:
     - picmistandard
+  commands:
+    - pip check
 
 about:
   home: https://picmi-standard.github.io
