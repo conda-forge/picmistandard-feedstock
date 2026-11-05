@@ -1,7 +1,7 @@
 {% set name = "picmistandard" %}
-{% set version = "0.34.0" %}
+{% set version = "0.35.0" %}
 {% set build = 0 %}
-{% set sha256 = "2406b7203dbfdce7986564783f5bdd9f5bec671af74549b4d766e937d80231a8" %}
+{% set sha256 = "79b30a7f33e4cd9822dc82f40ebd2682114136eee5e9161ddadec710d16772af" %}
 
 package:
   name: {{ name|lower }}
@@ -23,15 +23,20 @@ requirements:
     - python {{ python_min }}
     - setuptools
   run:
-    - numpy
     - python >={{ python_min }}
-    - scipy >=1.5
+    - numpy >=1.15
+    - pydantic >=2.13
+    - scipy >=1.5,<2
+    - typing_extensions
 
 test:
   requires:
+    - pip
     - python {{ python_min }}
   imports:
     - picmistandard
+  commands:
+    - pip check
 
 about:
   home: https://picmi-standard.github.io
